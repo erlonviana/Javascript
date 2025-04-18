@@ -1,0 +1,15 @@
+<%- include ('partials/navbar.ejs') %>
+<%- include ('partials/header.ejs') %>
+    <h1>Confira esse produto:</h1>
+<!-- = operador NOT: verifica se o valor é falso-->
+    <%if (!produto) { %> <!--trecho em Javascript-->
+        <% produtos.forEach(produto => { %> <!--percorrendo a lista corretamente-->
+            <p><a href="/produtos/<%= produto %>"><%=produto %></a></p> <!--criou um link com a rota produtos do array-->
+        
+        <% }) %>
+        <% } else { %> <!--if else caso o usuário informe os parâmetros ou não-->
+            <p><%= produto %></p>
+            <% } %>
+    <hr>
+    <p>Faça o seu pedido agora!</p>
+<%- include ('partials/footer.ejs') %>
